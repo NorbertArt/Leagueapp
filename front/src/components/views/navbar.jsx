@@ -1,9 +1,8 @@
 import React from 'react'
-import { Container  ,Navbar , Nav ,NavDropdown} from 'react-bootstrap'
+import { Container  ,Navbar , Nav } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './img/logo.png'
-import About from './about'
-import style from './style.css'
+
 
 const NavSection= () => {
    
@@ -12,7 +11,7 @@ const NavSection= () => {
         <div>
      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
-  <Navbar.Brand href="/"><img src={logo}  width="40"
+  <Navbar.Brand href="/"><img src={logo} alt="Logo" width="40"
         height="40"/></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">

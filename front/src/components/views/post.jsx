@@ -4,7 +4,6 @@ import NavSection from './navbar'
 import Axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card ,Container , Button} from "react-bootstrap"
-import { Navigation } from '@material-ui/icons';
 
 export default function Post() {
     let {postId} = useParams()

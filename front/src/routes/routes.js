@@ -6,7 +6,7 @@ import About from '../components/views/about'
 import Blog from '../components/views/Blog'
 import Post from '../components/views/post'
 const Login = lazy(() => import('../components/views/Login'))
-const Home = lazy(() => import('../components/views/Home'))
+const Home = lazy(() => import('../components/views/Home/Home'))
 
 
 const routes = [

@@ -32,7 +32,7 @@ const Login = () => {
     return (
         <div>
            
-            <Form className='col-md-3 mt-5 p-4 mx-auto'>
+            <Form className='col-md-3 mt-5 p-4 mx-auto border rounded'>
                 <h1>Admin</h1>
   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
     <Form.Label>Użytkownik</Form.Label>
