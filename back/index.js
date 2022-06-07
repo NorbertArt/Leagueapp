@@ -6,8 +6,7 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json({ limit: '10mb' }))
-// const JWT = require('jsonwebtoken')
-// const secretWord = 'Samus#Aran'
+
 
 const credentials = {
 	host: 'localhost',
@@ -119,6 +118,18 @@ app.get('/Blog/post/getFromId/:id' , (req , res) =>{
 	const id = req.params.id
 	db.query(
 		"SELECT * FROM Blog WHERE id=?", id ,(err, result)=>{
+			if(err){
+				console.log(err)
+			}else{
+				res.send(result)
+			}
+		}
+	)
+})
+app.get('/Leagues/' , (req , res) =>{
+	var db = mysql.createConnection(credentials)
+	db.query(
+		"SELECT team.Druzyna ,league.Nazwa_Ligi FROM team,league WHERE team.liga = league.Nazwa_Ligi",(err, result)=>{
 			if(err){
 				console.log(err)
 			}else{
