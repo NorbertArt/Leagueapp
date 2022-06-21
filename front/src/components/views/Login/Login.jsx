@@ -3,11 +3,10 @@ import axios from 'axios'
 import { useHistory } from 'react-router'
 import { Form , Button} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import logo from '../img/logo-dark.png'
 const Login = () => {
     const [body, setBody] = useState({ username: '', password: '' })
     const { push } = useHistory()
-
     const inputChange = ({ target }) => {
         const { name, value } = target
         setBody({
@@ -28,11 +27,10 @@ const Login = () => {
             })
        
     }
-
     return (
         <div>
-           
-            <Form className='col-md-3 mt-5 p-4 mx-auto border rounded'>
+            <div className='text-center mt-5'><img src={logo} width="100" height="100"></img></div>
+            <Form className='col-lg-3 col-md-6 mt-5 p-4 mx-auto border rounded'>
                 <h1>Admin</h1>
   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
     <Form.Label>Użytkownik</Form.Label>

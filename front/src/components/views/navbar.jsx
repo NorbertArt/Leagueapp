@@ -19,9 +19,9 @@ const NavSection= () => {
     <Nav.Link href="/Blog">Blog</Nav.Link>
         <Nav.Link href="/Onas">O nas</Nav.Link>
         <Nav.Link href="/wyniki">Wyniki</Nav.Link>
-      <Nav.Link href="">Nadchodzące Mecze</Nav.Link>
+      <Nav.Link href="/Nadchodzące-Mecze">Nadchodzące Mecze</Nav.Link>
       <Nav.Link href="#features">Zgłoś Drużynę</Nav.Link>
-      <Nav.Link href="#pricing">Drużyny</Nav.Link>
+      <Nav.Link href="/Druzyny">Drużyny</Nav.Link>
      
     </Nav>
   </Navbar.Collapse>

@@ -6,6 +6,7 @@ import NavSection from './navbar'
 import Axios from 'axios'
 import style from './style.css'
 import { useHistory} from 'react-router-dom';
+import Footer from './footer';
 
 
 const Blog= () => {
@@ -24,31 +25,36 @@ const Blog= () => {
            <div className='container'>
                <div className='row'>
            <h1 className='Nag'>Blog</h1>
+           <p className="text-muted">Tutaj znajdują się nasze wpisy dotyczące spotkań i nie tylko</p>
            {post.map((val,key)=>{
+                  const img = "/image/blog/" + val.Image
                return(
                 <CardGroup className='col-md-4 mt-5'>
-                <Card>
-                  <Card.Img variant="top" src="" />
+                <Card className='shadow'> 
+                  <Card.Header>Wpis nr {val.id}</Card.Header>
+                  <img src={img} className='img-fluid'></img>
                   <Card.Body>
-                    <Card.Title>{val.Title}</Card.Title>
+                  
+                    <Card.Title>{val.Title}</Card.Title >
                     <Card.Text>
-                      {val.Content}
+                      {val.Content.length > 150 ? val.Content.substring(0,150) + '....' :val.Content}
                     </Card.Text>
                   </Card.Body>
-                  <Button className='button-blog' 
-                  onClick={()=>{
+                  <Button variant='danger' className='col-4 mx-auto mb-3' onClick={()=>{
                       history.push(`/Blog/post/${val.id}`)
                     }}>Zobacz więcej</Button>
                   <Card.Footer>
-                    <small className="text-muted">{val.Time}</small>
+                    <small className="text-muted">{"Opublikowano" + " " + val.Time}</small>
                   </Card.Footer>
           
                   </Card>
                   </CardGroup>
+                  
                )
            })}
            </div>
            </div>
+           <Footer/>
         </div>
     )
 }
