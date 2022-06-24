@@ -12,18 +12,17 @@ export default function Home() {
         let history = useHistory()
         const sortAsc = (a, b) => a - b;
         useEffect(()=>{
-            Axios.get("http://localhost:4000/Table").then((data)=>{
+            Axios.get("http://limanowskasuperliga.pl:4000/Table").then((data)=>{
                 setDisplayTable(data.data)
-                console.log(data.data)
             })
            },[])   
            useEffect(()=>{
-            Axios.get("http://localhost:4000/Incoming").then((data)=>{
+            Axios.get("http://limanowskasuperliga.pl:4000/Incoming").then((data)=>{
                 setIncoming(data.data[0])
             })
            },[])  
            useEffect(()=>{
-            Axios.get("http://localhost:4000/LastMatch").then((data)=>{
+            Axios.get("http://limanowskasuperliga.pl:4000/LastMatch").then((data)=>{
                 setLastMatch(data.data[0])
             })
            },[])

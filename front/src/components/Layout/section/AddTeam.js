@@ -34,7 +34,7 @@ export default function AddTeam() {
     const formdata = new FormData(); 
     formdata.append('avatar', userInfo.file);
     
-		Axios.post("http://localhost:4000/Team" , {
+		Axios.post("http://limanowskasuperliga.pl:4000/Team" , {
       team:team,
       match:match,
       score:score,
@@ -42,29 +42,29 @@ export default function AddTeam() {
       Slug:Slug,
       image:image
 		})
-    Axios.post("http://localhost:4000/imageupload/Team",formdata,{   
+    Axios.post("http://limanowskasuperliga.pl:4000/imageupload/Team",formdata,{   
       headers: { "Content-Type": "multipart/form-data" } 
     })
     alert("Udało się dodać")
     window.location.reload()
 	}
   useEffect(()=>{
-    Axios.get("http://localhost:4000/League").then((data)=>{
+    Axios.get("http://limanowskasuperliga.pl:4000/League").then((data)=>{
         setdisplayLeague(data.data)
         console.log(data.data)
           
     })
    },[])
    useEffect(()=>{
-    Axios.get("http://localhost:4000/Team").then((data)=>{
+    Axios.get("http://limanowskasuperliga.pl:4000/Team").then((data)=>{
         setTeamDisplay(data.data)
         console.log(data.data)
           
     })
    },[])
    const DelateTeam = (id ,image)=>{
-    Axios.delete(`http://localhost:4000/Team/delete/${id}`)
-    Axios.delete(`http://localhost:4000/imageupload/Team/delate/${image}`)
+    Axios.delete(`http://limanowskasuperliga.pl:4000/Team/delete/${id}`)
+    Axios.delete(`http://limanowskasuperliga.pl:4000/imageupload/Team/delate/${image}`)
 
     alert("Udało się usunąć")
     window.location.reload()

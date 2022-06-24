@@ -12,7 +12,7 @@ export default function Addincoming() {
     const [incoming , setIncoming] = useState("")
     const [DisplayTeam, setDisplayTeam] = useState("")
     const addComing= ()=>{
-      Axios.post("http://localhost:4000/Incoming" , {
+      Axios.post("http://limanowskasuperliga.pl:4000/Incoming" , {
         Team1:Team1,
         Date:Date,
         Team2:Team2
@@ -21,18 +21,18 @@ export default function Addincoming() {
       })
     }
     useEffect(()=>{
-      Axios.get("http://localhost:4000/Incoming").then((data)=>{
+      Axios.get("http://limanowskasuperliga.pl:4000/Incoming").then((data)=>{
           setIncoming(data.data)
       })
      },[])
      const DelateIncoming = (id)=>{
-      Axios.delete(`http://localhost:4000/Incoming/delete/${id}`).then(()=>{
+      Axios.delete(`http://limanowskasuperliga.pl:4000/Incoming/delete/${id}`).then(()=>{
            alert("Udało się usunąć")
            window.location.reload()
       })
     }
     useEffect(()=>{
-      Axios.get("http://localhost:4000/Team").then((data)=>{
+      Axios.get("http://limanowskasuperliga.pl:4000/Team").then((data)=>{
           setDisplayTeam(data.data)
           console.log(data.data)
             

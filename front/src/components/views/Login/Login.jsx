@@ -16,7 +16,7 @@ const Login = () => {
     }
 
     const onSubmit = () => {
-        axios.post('http://localhost:4000/api/login', body)
+        axios.post('http://limanowskasuperliga.pl:4000/api/login', body)
             .then(({ data }) => {
                 localStorage.setItem('auth', '"yes"')
                 push("/app")
@@ -30,7 +30,7 @@ const Login = () => {
     return (
         <div>
             <div className='text-center mt-5'><img src={logo} width="100" height="100"></img></div>
-            <Form className='col-lg-3 col-md-6 mt-5 p-4 mx-auto border rounded'>
+            <Form className='col-lg-3 col-md-6  mt-5 p-4 mx-auto border rounded'>
                 <h1>Admin</h1>
   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
     <Form.Label>Użytkownik</Form.Label>

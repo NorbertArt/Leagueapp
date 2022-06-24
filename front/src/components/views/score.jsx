@@ -12,7 +12,7 @@ export default function Score() {
     let history = useHistory()
 
     useEffect(()=>{
-        Axios.get("http://localhost:4000/lastmatch").then((data)=>{
+        Axios.get("http://limanowskasuperliga.pl:4000/lastmatch").then((data)=>{
             setScore(data.data)
         })
        },[]) 

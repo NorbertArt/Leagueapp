@@ -12,7 +12,7 @@ export default function InComing() {
     let history = useHistory()
 
     useEffect(()=>{
-        Axios.get("http://localhost:4000/Incoming").then((data)=>{
+        Axios.get("http://limanowskasuperliga.pl:4000/Incoming").then((data)=>{
             setIncoming(data.data)
         })
        },[]) 

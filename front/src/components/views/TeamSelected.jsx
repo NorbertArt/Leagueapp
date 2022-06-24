@@ -12,7 +12,7 @@ export default function TeamSelected() {
     const [TeamPlayers , setTeamPlayers] = useState({})
     let history = useHistory()
     useEffect(()=>{
-            Axios.get(`http://localhost:4000/Team/Players/getFromId/${TeamId}`).then((data)=>{
+            Axios.get(`http://limanowskasuperliga.pl:4000/Team/Players/getFromId/${TeamId}`).then((data)=>{
                 setTeamPlayers(data.data)
                 console.log(data.data)
             })

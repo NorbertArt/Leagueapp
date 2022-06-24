@@ -11,6 +11,7 @@ import knex from'./src/config/database'
 import Players from './src/models/players';
 
 const app = express()
+
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json({ limit: '10mb' }))

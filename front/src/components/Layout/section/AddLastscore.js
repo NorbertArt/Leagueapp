@@ -13,7 +13,7 @@ export default function AddLastscore() {
     const [DisplayTeam, setDisplayTeam] = useState("")
     
     const ScoreAdd= ()=>{
-      Axios.post("http://localhost:4000/LastMatch" , {
+      Axios.post("http://limanowskasuperliga.pl:4000/LastMatch" , {
         Team1:Team1,
         score:score,
         Team2:Team2
@@ -23,18 +23,18 @@ export default function AddLastscore() {
       })
     }
     useEffect(()=>{
-      Axios.get("http://localhost:4000/LastMatch").then((data)=>{
+      Axios.get("http://limanowskasuperliga.pl:4000/LastMatch").then((data)=>{
           setDisplayScore(data.data)
       })
      },[])
      const DelateLastScore= (id)=>{
-      Axios.delete(`http://localhost:4000/LastMatch/delete/${id}`).then(()=>{
+      Axios.delete(`http://limanowskasuperliga.pl:4000/LastMatch/delete/${id}`).then(()=>{
            alert("Udało się usunąć")
            window.location.reload()
       })
     }
     useEffect(()=>{
-      Axios.get("http://localhost:4000/Team").then((data)=>{
+      Axios.get("http://limanowskasuperliga.pl:4000/Team").then((data)=>{
           setDisplayTeam(data.data)
           console.log(data.data)
             

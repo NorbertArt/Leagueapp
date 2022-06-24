@@ -14,13 +14,13 @@ export default function Players() {
     const [Number, setNumber] = useState("")
     const [PlayersDisplay, setPlayersDisplay] = useState("")
     const DelatePlayers = (id)=>{
-        Axios.delete(`http://localhost:4000/Players/delete/${id}`).then(()=>{
+        Axios.delete(`http://limanowskasuperliga.pl:4000/Players/delete/${id}`).then(()=>{
              alert("Udało się usunąć")
              window.location.reload()
         })
       }
       const PlayersAdd= ()=>{
-		Axios.post("http://localhost:4000/Players" , {
+		Axios.post("http://limanowskasuperliga.pl:4000/Players" , {
             Name:Name,
             Position:Position,
             Number:Number,
@@ -30,13 +30,13 @@ export default function Players() {
 		})
 	}
     useEffect(()=>{
-        Axios.get("http://localhost:4000/Players").then((data)=>{
+        Axios.get("http://limanowskasuperliga.pl:4000/Players").then((data)=>{
             setPlayersDisplay(data.data)
               
         })
        },[])
        useEffect(()=>{
-        Axios.get("http://localhost:4000/Team").then((data)=>{
+        Axios.get("http://limanowskasuperliga.pl:4000/Team").then((data)=>{
             setDisplayTeam(data.data)
         })
        },[])

@@ -10,7 +10,6 @@ export default function AddPost() {
     const [Title , setTitle] = useState("")
     const [Content , setContent] = useState("")
     const [post ,setPost] = useState([])
-    const [alertErr , setAlertErr] = useState("")
     const [image , setImageName] = useState("")
     let history = useHistory()
 
@@ -29,7 +28,7 @@ export default function AddPost() {
       setImageName(event.target.files[0].name)
     }
     useEffect(()=>{
-        Axios.get("http://localhost:4000/Blog").then((data)=>{
+        Axios.get("http://limanowskasuperliga.pl:4000/Blog").then((data)=>{
             setPost(data.data)
         })
        },[])
@@ -39,12 +38,12 @@ export default function AddPost() {
   const formdata = new FormData(); 
   formdata.append('avatar', userInfo.file);
 
-		Axios.post("http://localhost:4000/Blog" , {
+		Axios.post("http://limanowskasuperliga.pl:4000/Blog" , {
         Title:Title,
         Content:Content,
         image:image
 		}) 
-    Axios.post("http://localhost:4000/imageupload",formdata,{   
+    Axios.post("http://limanowskasuperliga.pl:4000/imageupload",formdata,{   
       headers: { "Content-Type": "multipart/form-data" } 
     })
     alert("Udało się dodać")
@@ -52,8 +51,8 @@ export default function AddPost() {
 
 	}   
   const DelatePost = (id ,Image)=>{
-    Axios.delete(`http://localhost:4000/Blog/delete/${id}`)
-    Axios.delete(`http://localhost:4000/imageupload/delate/${Image}`)
+    Axios.delete(`http://limanowskasuperliga.pl:4000/Blog/delete/${id}`)
+    Axios.delete(`http://limanowskasuperliga.pl:4000/imageupload/delate/${Image}`)
     
     window.location.reload()
     alert("Udało się usunąć")

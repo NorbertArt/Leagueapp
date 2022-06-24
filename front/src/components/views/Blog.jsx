@@ -14,7 +14,7 @@ const Blog= () => {
     let history = useHistory()
 
     useEffect(()=>{
-        Axios.get("http://localhost:4000/Blog").then((data)=>{
+        Axios.get("http://limanowskasuperliga.pl:4000/Blog").then((data)=>{
             setPost(data.data)
         })
        },[])   

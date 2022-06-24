@@ -9,7 +9,7 @@ export default function Teams() {
   let history = useHistory()
   const [Team, setTeam] = useState("")
   useEffect(()=>{
-    Axios.get("http://localhost:4000/Team").then((data)=>{
+    Axios.get("http://limanowskasuperliga.pl:4000/Team").then((data)=>{
         setTeam(data.data)  
     })
    },[])

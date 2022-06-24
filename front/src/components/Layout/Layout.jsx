@@ -6,7 +6,6 @@ import { useHistory } from 'react-router'
 import NavAdmin from './navAdmin'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTrash } from '@fortawesome/free-solid-svg-icons'
-import logo from '../views/img/logo2.png'
 
 const Layout = () => {
   const history = useHistory()
@@ -14,7 +13,7 @@ const Layout = () => {
   const [displayLeague , setDisplayLeague] = useState("")
 
 	const leagueAdd= ()=>{
-		Axios.post("http://localhost:4000/league" , {
+		Axios.post("http://limanowskasuperliga.pl:4000/league" , {
 			league:league
 		}).then(()=>{
          alert("Udało się dodać ligę")
@@ -22,13 +21,13 @@ const Layout = () => {
 		})
 	}
   const DelateLeague= (id)=>{
-		Axios.delete(`http://localhost:4000/league/delete/${id}`).then(()=>{
+		Axios.delete(`http://limanowskasuperliga.pl:4000/league/delete/${id}`).then(()=>{
          alert("Udało się usunąć Lige")
          window.location.reload()
 		})
 	}
   useEffect(()=>{
-    Axios.get("http://localhost:4000/league").then((data)=>{
+    Axios.get("http://limanowskasuperliga.pl:4000/league").then((data)=>{
       setDisplayLeague(data.data)
     })
    },[])
