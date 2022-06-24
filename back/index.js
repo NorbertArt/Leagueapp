@@ -31,7 +31,7 @@ const Team = multer.diskStorage({
 const credentials = {
 	host: 'localhost',
 	user: 'root',
-	password: '',
+	password: 'Limanowska',
 	database: 'users'
 }
 
@@ -67,7 +67,7 @@ app.post('/Blog', (req, res) =>{
 	const Time = Dates.getDate() + "-" + Month + "-" + Dates.getFullYear() + " " + Dates.getHours() + ":" + Dates.getMinutes()
 	var db = mysql.createConnection(credentials)
 	db.query(
-		"INSERT INTO Blog (Title,Content ,Image ,Time) VALUES (?,?,?,?)",
+		"INSERT INTO blog (Title,Content ,Image ,Time) VALUES (?,?,?,?)",
 		[Title , Content ,image,Time],
 		(err, result)=>{
 		if(err){
@@ -142,7 +142,7 @@ app.delete('/imageupload/delate/:image', async (req, res) => {
 app.get('/Blog' , (req , res) =>{
 	var db = mysql.createConnection(credentials)
 	db.query(
-		"SELECT * FROM Blog", (err, result)=>{
+		"SELECT * FROM blog", (err, result)=>{
 			if(err){
 				console.log(err)
 			}else{
@@ -155,7 +155,7 @@ app.get('/Blog/post/getFromId/:id' , (req , res) =>{
 	var db = mysql.createConnection(credentials)
 	const id = req.params.id
 	db.query(
-		"SELECT * FROM Blog WHERE id=?", id ,(err, result)=>{
+		"SELECT * FROM blog WHERE id=?", id ,(err, result)=>{
 			if(err){
 				console.log(err)
 			}else{
