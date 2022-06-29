@@ -53,7 +53,7 @@ export default function TeamSelected() {
 </div>
           <div className='col-lg-5 mt-2  pl-3'>
             <div className='text-center'>
-            <img src={"/image/Team/" + val.image} className='mb-3' width="200" height="200"></img>
+            <img src={"http://limanowskasuperliga.pl/image/Team/" + val.image} className='mb-3' width="200" height="200"></img>
             </div>
             <h1 className='text-center mb-4 mt-3'>Opis Drużyny</h1>
             <small className="text-muted">{val.Slug}</small>

@@ -22,10 +22,10 @@ export default function Score() {
     <Container>
     <h1 className='mt-5 mb-4'>Ostatnie Wyniki</h1>
     <div className='row'>
-    {Array.from(Score).map((val,key)=>{
+    {Score ? Array.from(Score).map((val,key)=>{
         return(
     <div className='col-lg-4'>
-    <Card className='shadow'>
+    <Card className='shadow mb-4'>
   <Card.Header className='p-3'></Card.Header>
   <Card.Body className='row'>
       
@@ -49,7 +49,7 @@ export default function Score() {
    
   </Card>
 </div>
-    )})}
+    )}): <Alert variant='danger'>Brak Wyników....</Alert>}
     </div>
     </Container>
     <br></br>

@@ -21,7 +21,7 @@ export default function Post() {
         <Container>
         <Card className='mt-5 mb-5 col-10 mx-auto'>
   <Card.Header>Wpis nr {post.id}</Card.Header>
-  <div className='col-12'><img className="mb-5 img-fluid col-12" src={"/image/blog/" + post.Image}></img></div>
+  <div className='col-12'><img className="mb-5 img-fluid col-12" src={"http://limanowskasuperliga.pl/image/Blog/" + post.Image}></img></div>
   <Card.Body className='pt-0'>
     
   

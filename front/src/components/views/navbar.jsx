@@ -17,11 +17,13 @@ const NavSection= () => {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto p-2">
     <Nav.Link href="/Blog">Blog</Nav.Link>
-        <Nav.Link href="/Onas">O nas</Nav.Link>
+        
         <Nav.Link href="/wyniki">Wyniki</Nav.Link>
+        <Nav.Link href="/Druzyny">Drużyny</Nav.Link>
+        <Nav.Link href="/Onas">O nas</Nav.Link>
       <Nav.Link href="/Nadchodzące-Mecze">Nadchodzące Mecze</Nav.Link>
-      <Nav.Link href="#features">Zgłoś Drużynę</Nav.Link>
-      <Nav.Link href="/Druzyny">Drużyny</Nav.Link>
+      <Nav.Link href="/Zglos-druzyne">Zgłoś Drużynę</Nav.Link>
+     
      
     </Nav>
   </Navbar.Collapse>

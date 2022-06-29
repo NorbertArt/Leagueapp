@@ -22,10 +22,10 @@ export default function InComing() {
     <Container>
     <h1 className='mt-5 mb-4'>Nadchodzące Spotkania</h1>
     <div className='row'>
-    {Array.from(incoming).map((val,key)=>{
+    {incoming ? Array.from(incoming).map((val,key)=>{
         return(
     <div className='col-lg-4'>
-    <Card className='shadow'>
+    <Card className='shadow mb-4'>
   <Card.Header className='p-3'></Card.Header>
   <Card.Body className='row'>
       
@@ -49,7 +49,7 @@ export default function InComing() {
    
   </Card>
 </div>
-    )})}
+    )}) :<Alert variant='danger'>Brak wyników...</Alert>}
     </div>
     </Container>
     <br></br>

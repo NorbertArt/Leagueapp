@@ -35,9 +35,7 @@ export default function AddLastscore() {
     }
     useEffect(()=>{
       Axios.get("http://limanowskasuperliga.pl:4000/Team").then((data)=>{
-          setDisplayTeam(data.data)
-          console.log(data.data)
-            
+          setDisplayTeam(data.data)            
       })
      },[])
   return (
@@ -99,7 +97,7 @@ export default function AddLastscore() {
 
   <Form.Group className="col-5 mb-3">
            <Form.Select aria-label="Default select example" onChange={(e) =>{
-        setTeam1((e.target.value))
+        setTeam2((e.target.value))
         }}>
           <option></option>
           {Array.from(DisplayTeam).map((val,key)=>{

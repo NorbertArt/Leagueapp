@@ -77,7 +77,7 @@ app.post('/Blog', (req, res) =>{
 		}
 	}
 	)
-	
+	db.end()
 })
 app.post('/imageupload', async (req, res) => {	
     try {
@@ -150,6 +150,7 @@ app.get('/Blog' , (req , res) =>{
 			}
 		}
 	)
+	db.end()
 })
 app.get('/Blog/post/getFromId/:id' , (req , res) =>{
 	var db = mysql.createConnection(credentials)
@@ -163,6 +164,7 @@ app.get('/Blog/post/getFromId/:id' , (req , res) =>{
 			}
 		}
 	)
+	db.end()
 })
 app.delete('/Blog/delete/:id',(req,res)=>{
 	const id= req.params.id
@@ -173,7 +175,9 @@ app.delete('/Blog/delete/:id',(req,res)=>{
 		}else{
 			res.send(result)
 		}
-	} )})
+	} )
+	db.end()
+})
 app.post('/Incoming', (req, res) =>{
 	const Team1 = req.body.Team1;
 	const Team2 = req.body.Team2;
@@ -190,6 +194,7 @@ app.post('/Incoming', (req, res) =>{
 		}
 	}
 	)
+	db.end()
 })
 app.get('/Incoming' , (req , res) =>{
 	var db = mysql.createConnection(credentials)
@@ -202,6 +207,7 @@ app.get('/Incoming' , (req , res) =>{
 			}
 		}
 	)
+	db.end()
 })
 app.delete('/Incoming/delete/:id',(req,res)=>{
 	const id= req.params.id
@@ -212,7 +218,9 @@ app.delete('/Incoming/delete/:id',(req,res)=>{
 		}else{
 			res.send(result)
 		}
-	} )})
+	} )
+	db.end()
+})
 app.get('/LastMatch' , (req , res) =>{
 	var db = mysql.createConnection(credentials)
 	db.query(
@@ -224,6 +232,7 @@ app.get('/LastMatch' , (req , res) =>{
 			}
 		}
 	)
+	db.end()
 })
 app.post('/LastMatch', (req, res) =>{
 	const Team1 = req.body.Team1;
@@ -241,6 +250,7 @@ app.post('/LastMatch', (req, res) =>{
 		}
 	}
 	)
+	db.end()
 })
 app.delete('/LastMatch/delete/:id',(req,res)=>{
 	const id= req.params.id
@@ -251,7 +261,9 @@ app.delete('/LastMatch/delete/:id',(req,res)=>{
 		}else{
 			res.send(result)
 		}
-	} )})
+	} )
+	db.end()
+})
 app.get('/Team' , async(req,res)=>{
 	const Team = await Teams.query().orderByRaw('team.Punkty');
 	res.send(Team)
@@ -292,7 +304,9 @@ app.delete('/Players/delete/:id',(req,res)=>{
 		}else{
 			res.send(result)
 		}
-	} )})
+	} )
+	db.end()
+})
 
 app.post('/Team', async(req, res) =>{
 	const score = req.body.score;
@@ -320,7 +334,9 @@ app.delete('/Team/delete/:id',(req,res)=>{
 		}else{
 			res.send(result)
 		}
-	} )})
+	} )
+	db.end()
+})
 
 app.get('/League' , async(req,res)=>{
 	const league = await Leagues.query()
@@ -335,7 +351,9 @@ app.delete('/league/delete/:id',(req,res)=>{
 		}else{
 			res.send(result)
 		}
-	} )})
+	} )
+	db.end()
+})
 
 app.post('/League', (req, res) =>{
 	const League = req.body.league;
@@ -351,6 +369,7 @@ app.post('/League', (req, res) =>{
 		}
 	}
 	)
+	db.end()
 })
 app.get('/Table' , async(req,res)=>{
 	const league = await Leagues.query().withGraphFetched('teams')

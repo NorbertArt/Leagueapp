@@ -25,7 +25,7 @@ export default function Teams() {
     <div className='col-lg-4'>
     <Card className='shadow mt-5'>
   <Card.Header className='p-3 text-center'>{val.Druzyna}</Card.Header>
-  <img className='mt-3 mx-auto' src={"/image/Team/" + val.image} width="120" height="120" ></img>
+  <img className='mt-3 mx-auto' src={"http://limanowskasuperliga.pl/image/Team/" + val.image} width="120" height="120" ></img>
   <Card.Body className='row'>
           
         <div className='row p-0 text-center mx-auto'>

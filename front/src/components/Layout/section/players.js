@@ -27,6 +27,7 @@ export default function Players() {
             Team:Team
 		}).then(()=>{
           alert("Udało się dodać")
+          window.location.reload()
 		})
 	}
     useEffect(()=>{
@@ -92,7 +93,7 @@ export default function Players() {
         setNumber((e.target.value))}}/>
   </Form.Group>
       <div className='text-center'>
-  <Button variant="primary" type="submit" className='col-lg-4 col-12' onClick={PlayersAdd}>
+  <Button variant="primary"  className='col-lg-4 col-12' onClick={PlayersAdd}>
    Dodaj
   </Button>
     </div>

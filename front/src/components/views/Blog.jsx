@@ -27,7 +27,7 @@ const Blog= () => {
            <h1 className='Nag'>Blog</h1>
            <p className="text-muted">Tutaj znajdują się nasze wpisy dotyczące spotkań i nie tylko</p>
            {post.map((val,key)=>{
-                  const img = "/image/blog/" + val.Image
+                  const img = "http://limanowskasuperliga.pl/image/Blog/" + val.Image
                return(
                 <CardGroup className='col-md-4 mt-5'>
                 <Card className='shadow'> 

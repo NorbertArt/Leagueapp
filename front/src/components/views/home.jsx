@@ -14,16 +14,19 @@ export default function Home() {
         useEffect(()=>{
             Axios.get("http://limanowskasuperliga.pl:4000/Table").then((data)=>{
                 setDisplayTable(data.data)
+                console.log(data.data)
             })
            },[])   
            useEffect(()=>{
             Axios.get("http://limanowskasuperliga.pl:4000/Incoming").then((data)=>{
-                setIncoming(data.data[0])
+                const index = data.data.length
+                setIncoming(data.data[index - 1])
             })
            },[])  
            useEffect(()=>{
             Axios.get("http://limanowskasuperliga.pl:4000/LastMatch").then((data)=>{
-                setLastMatch(data.data[0])
+              const index2 = data.data.length
+                setLastMatch(data.data[index2 - 1])
             })
            },[])
   return (    
@@ -46,13 +49,15 @@ export default function Home() {
   <tbody>
     
       {Array.from(val.teams.sort((a, b) => a.Punkty > b.Punkty ? 1:-1 ).reverse().map(team => 
-      
       <tr>
+        
         <td></td>
         <td>{team.Druzyna}</td>
         <td>{team.Mecze}</td>
         <td>{team.Punkty}</td>
-        </tr>))}
+        </tr>
+        
+        ))}
   </tbody>
 
 </Table>
@@ -70,16 +75,16 @@ export default function Home() {
         <div className='row  mx-auto'>
         <div className='col-5'>
         <Alert variant="secondary">
-              {incoming.Druzyna1}
+              {incoming ? incoming.Druzyna1 : <p></p>}
         </Alert>
         </div>
         <div className='col-2 mt-3 text-dark'>VS</div>
         <div className='col-5'>
         <Alert variant="secondary">
-        {incoming.Druzyna2}
+        {incoming ? incoming.Druzyna2: <p></p>}
         </Alert>
         </div>
-        <div className='text-muted'>{incoming.Data}</div>
+        <div className='text-muted'>{incoming ? incoming.Data : <p></p>}</div>
         </div>
  
     
@@ -93,13 +98,13 @@ export default function Home() {
   <Card.Body className='row'> 
     <div className='col-5'>
     <Alert variant="secondary">
-      {lastmatch.Druzyna1}
+      {lastmatch ?lastmatch.Druzyna1 : <p></p>}
     </Alert>
     </div>
-    <div className='col-2 mt-3 text-dark'>{lastmatch.Wynik}</div>
+    <div className='col-2 mt-3 text-dark'>{lastmatch ? lastmatch.Wynik : <p></p>}</div>
     <div className='col-5'>
     <Alert variant="secondary">
-      {lastmatch.Druzyna2}
+      {lastmatch ? lastmatch.Druzyna2 : <p></p>}
     </Alert>
     </div>
     </Card.Body>

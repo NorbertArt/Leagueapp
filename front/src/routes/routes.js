@@ -13,8 +13,10 @@ import AddLastscore from './../components/Layout/section/AddLastscore';
 import AddPost from './../components/Layout/section/AddPost';
 import AddTeam from './../components/Layout/section/AddTeam';
 import TeamSelected from '../components/views/TeamSelected'
+import ReportTeam from './../components/views/reportTeam';
 const Login = lazy(() => import('../components/views/Login'))
 const Home = lazy(() => import('../components/views/Home/Home'))
+
 
 
 const routes = [
@@ -41,6 +43,11 @@ const routes = [
     path:"/Onas",
     exact:true,
     component:About
+   },
+   {
+    path:"/Zglos-druzyne",
+    exact:true,
+    component:ReportTeam
    },
    {
     path:"/Blog/post/:postId",
@@ -92,6 +99,7 @@ const routes = [
     exact:true,
     render: props => <RouteController component={Players} {...props} />
    },
+   
    
 ]
 
